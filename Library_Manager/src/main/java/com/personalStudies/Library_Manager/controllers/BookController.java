@@ -32,4 +32,11 @@ public class BookController {
 
         return result;
     }
+
+    @GetMapping (value = "/genre/{genre}")
+    public List<BookMinDTO> searchByGenre(@PathVariable String genre) {
+        List<BookMinDTO> result = bookService.searchByGen(genre);
+
+        return result;
+    }
 }

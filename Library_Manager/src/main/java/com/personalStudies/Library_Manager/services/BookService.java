@@ -38,4 +38,11 @@ public class BookService {
 
         return new BookDTO(result);
     }
+
+    @Transactional (readOnly = true)
+    public List<BookMinDTO> searchByGen(String genre) {
+        List<Book> result = bookRepository.searchByGenre(genre);
+
+        return result.stream().map(BookMinDTO::new).toList();
+    }
 }
