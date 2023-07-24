@@ -13,9 +13,6 @@ public class Shelves {
     private final int CAPACITY = 6;
     private String genre;
 
-    // @ElementCollection
-    // private List<Book> books = new LinkedList<>();
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -42,14 +39,6 @@ public class Shelves {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
-    /* public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    } */
 
     public Long getId() {
         return id;
