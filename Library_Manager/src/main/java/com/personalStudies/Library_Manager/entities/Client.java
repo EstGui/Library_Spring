@@ -1,21 +1,18 @@
 package com.personalStudies.Library_Manager.entities;
 
-import java.util.List;
-
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_clients")
 public class Client {
-    private String name, account, phone;
 
-    @ElementCollection
-    private List<Book> rentedBooks;
+    @NotBlank
+    private String name, email, phone, password;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +21,11 @@ public class Client {
     public Client() {
     }
 
-    public Client(String name, String account, String phone, Long id) {
+    public Client(String name, String email, String phone, String password, Long id) {
         this.name = name;
-        this.account = account;
+        this.email = email;
         this.phone = phone;
+        this.password = password;
         this.id = id;
     }
 
@@ -39,12 +37,12 @@ public class Client {
         this.name = name;
     }
 
-    public String getAccount() {
-        return account;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
@@ -55,12 +53,20 @@ public class Client {
         this.phone = phone;
     }
 
-    public List<Book> getRentedBooks() {
+    /* public List<Book> getRentedBooks() {
         return rentedBooks;
     }
 
     public void setRentedBooks(List<Book> rentedBooks) {
         this.rentedBooks = rentedBooks;
+    } */
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Long getId() {
@@ -69,5 +75,11 @@ public class Client {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Client [name=" + name + ", email=" + email + ", phone=" + phone + ", password=" + password
+                + ", id=" + id + "]";
     }
 }

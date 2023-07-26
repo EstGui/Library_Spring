@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - StoryLand</title>
+</head>
+<body>
+    <h1>StoryLand</h1>
+
+    <div th:if="${message}" th:text="${message}"></div>
+
+    <form action="/client/register" method="post" autocomplete="off">
+        <p>
+            <label for="name">Nome: </label>
+            <input type="text" name="name" id="name">
+        </p>
+
+        <p>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email">
+        </p>
+
+        <p>
+            <label for="phone">Telefone: </label>
+            <input type="tel" name="phone" id="phone">
+        </p>
+
+        <p>
+            <label for="password">Senha: </label>
+            <input type="password" name="password" id="password">
+        </p>
+
+        <p>
+            <input type="submit" value="Login">
+        </p>
+    </form>
+</body>
+</html>
