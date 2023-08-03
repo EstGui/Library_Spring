@@ -8,4 +8,6 @@ import com.personalStudies.Library_Manager.entities.Book;
 
 public interface IBookRepository extends JpaRepository<Book, Long>{
     List<Book> searchByGenre(String genre);
+    List<Book> searchByAuthor(String author);
+    List<Book> searchByTitle(String title);
 }

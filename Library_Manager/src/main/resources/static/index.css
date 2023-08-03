@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Rochester&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E5E5E5;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.banner {
+    position: relative;
+   background: rgb(66, 91, 158);
+   height: 485px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   border-bottom: 1px solid #000000;
+   box-shadow: 0 -20px 28px inset #00000055;
+}
+
+.bgimg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(1691076101818.png), rgb(66, 91, 158);
+    background-size: 426.6px;
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+    opacity: 0.2;
+}
+
+nav {
+    padding: 0 56px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.left {
+    /* width: 110px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.left p {
+    margin-top: -4.5px;
+    color: #fff;
+    font-family: 'montserrat';
+    font-size: 22px;
+    font-weight: lighter;
+}
+
+.right > ul {
+    width: 248px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+}
+
+ul > li {
+    list-style: none;
+}
+
+input {
+    width: 160px;
+    height: 30px;
+    background-color: #EFEFEF;
+    border-radius: 6px;
+    border: none;
+    padding: 0 25px;
+}
+
+svg {
+    color: #FFF;
+}
+
+.title {
+    position: absolute;
+    text-align: center;
+    top: 142px;
+}
+
+.title h1 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 64px;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 4px 24px #00000055;
+}
+
+.title h3{
+    font-family: 'Montserrat';
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+}
+
+.destaque {
+    padding: 0 87px;
+    width: 100%;
+    margin-top: -135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    overflow: auto;
+    gap: 28px;
+}
+
+.destaque > h4 {
+    font-family: 'montserrat';
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+    text-shadow: 2px 2px 2px #00000055;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 236px;
+    height: 315px;
+    background: #BBBBBB;
+    border-radius: 6px;
+    border: 1px solid #999999;
+    box-shadow: 5px 5px 24px #00000055;
+    z-index: 2;
+}

@@ -1,5 +1,6 @@
 package com.personalStudies.Library_Manager.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +23,8 @@ public class ClientController {
     //     return mv;
     // }
 
+    @Autowired
     private ClientService clientService;
-
-    public ClientController(ClientService clientService) {
-        this.clientService = clientService;
-    }
 
     @GetMapping ("/inicio")
     public String index() {
@@ -35,7 +33,7 @@ public class ClientController {
     }
 
     @GetMapping ("/login")
-    public String entering() {
+    public String login() {
 
         return "login";
     }

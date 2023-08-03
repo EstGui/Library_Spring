@@ -45,4 +45,18 @@ public class BookService {
 
         return result.stream().map(BookMinDTO::new).toList();
     }
+
+    @Transactional (readOnly = true)
+    public List<BookMinDTO> searchByTitle(String title) {
+        List<Book> result = bookRepository.searchByTitle(title);
+
+        return result.stream().map(BookMinDTO::new).toList();
+    }
+
+    @Transactional (readOnly = true)
+    public List<BookMinDTO> searchByAuthor(String author) {
+        List<Book> result = bookRepository.searchByAuthor(author);
+
+        return result.stream().map(BookMinDTO::new).toList();
+    }
 }
