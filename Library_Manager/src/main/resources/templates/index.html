@@ -66,14 +66,9 @@
             <div class="card" th:each="book : ${books}">
 
                 <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}">
-                <p>Título: <span th:text="${book.title}"></span></p>
-                <p>Autor: <span th:text="${book.author}"></span></p>
+                <p><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
+                <p>R$<span th:text="${book.value}"></span></p>
             </div>
-
-            <!-- <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div> -->
         </div>
     </div>
 </body>
