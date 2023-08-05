@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.personalStudies.Library_Manager.entities.Client;
 import com.personalStudies.Library_Manager.services.ClientService;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 
 @Controller

@@ -136,16 +136,23 @@ svg {
 .container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+    gap: 20px;
 }
 
 .card {
+    flex: 0 0 auto;
     width: 236px;
     height: 315px;
     background: #BBBBBB;
     border-radius: 6px;
     border: 1px solid #999999;
     box-shadow: 5px 5px 24px #00000055;
+    overflow: hidden;
     z-index: 2;
+}
+
+.card img {
+    height: 200px;
 }
