@@ -60,17 +60,48 @@
     </div>
 
 
-    <div class="destaque">
-        <h4>Destaques da Semana:</h4>
-        <div class="container">
-            <div class="card" th:each="book : ${books}">
+    <div class="books">
+        <div class="bookCollection">
+            <h4>Destaques da Semana:</h4>
+            <div class="container">
+                <div class="card" th:each="book : ${books}">
+                    <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}">
+                    <p><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
+                    <p>R$<span th:text="${book.value}"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="bookCollection" th:each="genre : ${genres}">
+            <h4><span th:text="${genre.key}"></span>:</h4>
+            <div class="container">
+                <div class="card" th:each="book : ${genre.value}">
+                    <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}" draggable="false">
+                    <p><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
+                    <!-- <p>R$<span th:text="${book.value}"></span></p> -->
 
-                <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}">
-                <p><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
-                <p>R$<span th:text="${book.value}"></span></p>
+                    <button>
+                        <p>R$ <span th:text="${book.value}"></span></p>
+                    </button>
+
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        var pos = document.documentElement;
+
+        window.addEventListener('scroll', opa)
+
+        function opa(e) {
+            var opacity = window.scrollY / 500
+            if (opacity > 1) {
+                opacity = 1
+            }
+
+            pos.style.setProperty('--op', opacity)
+        }
+    </script>
 </body>
 
 </html>

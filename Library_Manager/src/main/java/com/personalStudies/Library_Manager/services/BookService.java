@@ -59,4 +59,11 @@ public class BookService {
 
         return result.stream().map(BookMinDTO::new).toList();
     }
+
+    @Transactional (readOnly = true)
+    public List<Book> findGenres() {
+        List<Book> result = bookRepository.findGenres();
+
+        return result;
+    }
 }

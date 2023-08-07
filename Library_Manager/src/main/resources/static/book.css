@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: montserrat;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(170deg, #53ade2 2%, #a253e2 40%);
+}
+
+/* a253e2 */
+
+.container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+}
+
+.card {
+    width: 500px;
+    height: 550px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: -12px 12px 30px rgba(0, 0, 0, 0.4);
+    animation: sla 1.8s ease;
+    /* transform: rotateX(-15deg); */
+}
+
+@keyframes sla {
+    0% {
+        transform: translate(-50%, 0) rotate(15deg) rotateX(-30deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(0%, 0) rotate(0deg) rotateX(0deg);
+    }
+}
+
+.img > img {
+    width: 700px;
+    height: 470px;
+    transform: translate(-15%, 0);
+}
+
+.ppreta {
+    width: 50%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -12px 0 20px rgba(0, 0, 0, 0.4);
+}
+
+h1{
+    padding: 20px 0;
+}
+
+.txt {
+    width: 500px;
+    height: 200px;
+}
+
+h2 {
+    margin: 20px 40px;
+}

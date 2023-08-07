@@ -1,7 +1,11 @@
 package com.personalStudies.Library_Manager.controllers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.personalStudies.Library_Manager.entities.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +17,6 @@ import com.personalStudies.Library_Manager.DTO.BookMinDTO;
 import com.personalStudies.Library_Manager.services.BookService;
 
 @Controller
-@RequestMapping("/books")
 public class BookController {
     
     @Autowired
@@ -21,9 +24,19 @@ public class BookController {
 
     @GetMapping
     public String findAll(Model model) {
-        List<BookMinDTO> result = bookService.findAllDTO();
+        Map<String, List<BookMinDTO>> listGenres = new HashMap<>();
+        List<BookMinDTO> allBooks = bookService.findAllDTO();
+        List<Book> genresList = bookService.findGenres();
 
-        model.addAttribute("books", result);
+        for (Book genre : genresList) {
+            List<BookMinDTO> genreBooks = bookService.searchByGen(genre.getGenre());
+
+            listGenres.put(genre.getGenre(), genreBooks);
+        }
+
+        model.addAttribute("genres", listGenres);
+
+        model.addAttribute("books", allBooks);
 
         return "index";
     }

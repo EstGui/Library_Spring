@@ -1,12 +1,6 @@
 package com.personalStudies.Library_Manager.utils;
 
 public class Format {
-
-    public static void clean_term() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
     public static String format_prec(double val) {
         String price = (val < 10.00) ? String.format("0%.2f", val) : String.format("%.2f", val);
 
