@@ -65,9 +65,11 @@
             <h4>Destaques da Semana:</h4>
             <div class="container">
                 <div class="card" th:each="book : ${books}">
-                    <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}">
-                    <p><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
-                    <p>R$<span th:text="${book.value}"></span></p>
+                    <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}" draggable="false">
+                    <p class="info"><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
+                    <button>
+                        <p>R$ <span th:text="${book.value}"></span></p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -76,8 +78,7 @@
             <div class="container">
                 <div class="card" th:each="book : ${genre.value}">
                     <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}" draggable="false">
-                    <p><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
-                    <!-- <p>R$<span th:text="${book.value}"></span></p> -->
+                    <p class="info"><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
 
                     <button>
                         <p>R$ <span th:text="${book.value}"></span></p>
