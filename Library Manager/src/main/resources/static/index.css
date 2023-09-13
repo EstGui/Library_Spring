@@ -16,7 +16,7 @@ body {
 .banner {
     position: relative;
     background: rgb(66, 91, 158);
-    height: 450px;
+    height: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,6 +33,7 @@ body {
     left: 0;
     background: url(1691076101818.png), rgb(66, 91, 158);
     background-size: 426.6px;
+    background-attachment: fixed;
     background-blend-mode: multiply;
     background-repeat: repeat;
     opacity: 0.28;
@@ -116,8 +117,9 @@ svg {
 }
 
 .bookCollection {
-    margin: -24px 0;
-    padding: 35px 87px;
+    /* margin: -24px 0; */
+    /* margin-left: -24px; */
+    padding: 35px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -125,27 +127,65 @@ svg {
     align-items: baseline;
     overflow: hidden;
     gap: 18px;
+    position: relative;
 }
 
-.books {
+/* .books {
     margin-top: -135px;
-}
+} */
 
 .bookCollection > h4 {
+    padding: 0 87px;
     font-family: 'montserrat';
-    color: #FFF;
+    color: #000;
     font-size: 20px;
     font-weight: bold;
     z-index: 2;
-    text-shadow: 2px 2px 2px #00000055;
+    /* text-shadow: 2px 2px 2px #00000055; */
 }
 
 .container {
+    padding: 0 87px;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 30px;
-    overflow: hidden;
+    overflow: scroll;
+    position: relative;
+}
+
+.bookCollection::after {
+    content: url("arrow-next-small-svgrepo-com.svg");
+    width: 100px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-90deg, #E5E5E5, #00000000);
+    /* background: linear-gradient(-90deg, #F00 50%, #00000000); */
+    position: absolute;
+    bottom: 35px;
+    right: 0;
+    z-index: 2;
+}
+
+.bookCollection::before {
+    content: url("arrow-prev-small-svgrepo-com.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 350px;
+    background: linear-gradient(90deg, #E5E5E5, #00000000);
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    z-index: 3;
+}
+
+.container::-webkit-scrollbar {
+    height: 0;
+    width: 0;
 }
 
 .card {
