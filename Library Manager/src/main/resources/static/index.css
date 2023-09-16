@@ -152,36 +152,8 @@ svg {
     align-items: center;
     gap: 30px;
     overflow: scroll;
-    position: relative;
+    scroll-behavior: smooth;
 }
-
-/* .bookCollection::after {
-    content: url("arrow-next-small-svgrepo-com.svg");
-    width: 100px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(-90deg, #E5E5E5, #00000000);
-    position: absolute;
-    bottom: 35px;
-    right: 0;
-    z-index: 2;
-} */
-
-/* .bookCollection::before {
-    content: url("arrow-prev-small-svgrepo-com.svg");
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 350px;
-    background: linear-gradient(90deg, #E5E5E5, #00000000);
-    position: absolute;
-    bottom: 35px;
-    left: 0;
-    z-index: 3;
-} */
 
 .btnn, .btnp {
     width: 100px;

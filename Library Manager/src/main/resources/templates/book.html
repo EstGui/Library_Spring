@@ -10,10 +10,12 @@
 <div class="container">
     <div class="card">
         <div class="img">
-            <img th:src="${book.imgUrl}">
+            <img th:src="${book.imgUrl}" draggable="false">
         </div>
         <div class="text">
-            <h2 th:text="${book.title}"></h2>
+            <div class="rotate">
+                <h2 class="titles" th:text="${book.title}"></h2>
+            </div>
             <p th:text="${book.author}"></p>
         </div>
     </div>
@@ -21,8 +23,10 @@
 
 <div class="ppreta">
     <div class="title">
-        <h1 th:text="${book.title}"></h1>
-        <h3 th:text="${book.author}"></h3>
+        <div class="rotate">
+            <h1 class="titles" th:text="${book.title}"></h1>
+        </div>
+        <h3 style="font-weight: 500;" th:text="${book.author}"></h3>
     </div>
     <div class="line"></div>
     <hr>
@@ -43,13 +47,21 @@
 
     <div class="buttons">
         <button>
-            <a class="inicio" href="index.html">Início</a>
+            <a class="inicio" href="/">Início</a>
         </button>
         <button>
             <a class="buy" href="#">COMPRAR</a>
         </button>
     </div>
 </div>
+
+<script>
+    const title = document.querySelector(".title")
+
+    if (title.innerHTML.length < 40) {
+        title.classList.add("longtext")
+    }
+</script>
 
 <script src="script.js"></script>
 </body>

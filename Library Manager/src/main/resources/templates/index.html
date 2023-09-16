@@ -55,7 +55,7 @@
 
         <div class="title">
             <h1>StoryLand</h1>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3>O verdadeiro poder de uma sociedade está em sua biblioteca.</h3>
         </div>
     </div>
 
@@ -63,10 +63,10 @@
     <div class="books">
         <div class="bookCollection">
             <h4>Destaques da Semana:</h4>
-            <div class="btnp">
-                <button class="scroll"><img src="arrow-prev-small-svgrepo-com.svg" alt=""></button>
-            </div>
             <div class="container">
+                <div class="btnp">
+                    <button class="scroll"><img src="arrow-prev-small-svgrepo-com.svg" alt=""></button>
+                </div>
                 <div class="card" th:each="book : ${books}">
                     <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}" draggable="false">
                     <p class="info"><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
@@ -74,18 +74,18 @@
                         <a class="infos" th:href="@{/livro/{id}(id=${book.id})}" th:text="${'R$' + book.value}"></a>
                     </button>
                 </div>
-            </div>
-            <div class="btnn">
-                <button class="scroll"><img src="arrow-next-small-svgrepo-com.svg" alt=""></button>
+                <div class="btnn">
+                    <button class="scroll"><img src="arrow-next-small-svgrepo-com.svg" alt=""></button>
+                </div>
             </div>
         </div>
 
         <div class="bookCollection" th:each="genre : ${genres}">
             <h4><span th:text="${genre.key}"></span>:</h4>
-            <div class="btnp">
-                <button class="scroll"><img src="arrow-prev-small-svgrepo-com.svg" alt=""></button>
-            </div>
             <div class="container">
+                <div class="btnp">
+                    <button class="scroll"><img src="arrow-prev-small-svgrepo-com.svg" alt=""></button>
+                </div>
                 <div class="card" th:each="book : ${genre.value}">
                     <img th:src="${book.imgUrl}" th:alt="${book.title}" th:attr="title=${book.title}" draggable="false">
                     <p class="info"><span th:text="${book.title}"></span> - <span th:text="${book.author}"></span></p>
@@ -95,9 +95,9 @@
                     </button>
 
                 </div>
-            </div>
-            <div class="btnn">
-                <button class="scroll"><img src="arrow-next-small-svgrepo-com.svg" alt=""></button>
+                <div class="btnn">
+                    <button class="scroll"><img src="arrow-next-small-svgrepo-com.svg" alt=""></button>
+                </div>
             </div>
         </div>
     </div>
@@ -115,6 +115,29 @@
 
             pos.style.setProperty('--op', opacity)
         }
+
+        const scrollNext = document.querySelectorAll(".btnn");
+        const scrollPrev = document.querySelectorAll(".btnp");
+        
+        scrollNext.forEach(function(button) {
+            button.addEventListener("click", () => {
+                const container = button.closest(".container");
+                
+                container.scrollLeft += 900;
+                if (container) {
+                }
+            })
+        })
+
+        scrollPrev.forEach(function(button) {
+            button.addEventListener("click", () => {
+                const container = button.closest(".container");
+                
+                container.scrollLeft -= 900;
+                if (container) {
+                }
+            })
+        })
     </script>
 </body>
 
