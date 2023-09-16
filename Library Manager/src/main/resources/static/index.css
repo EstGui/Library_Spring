@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: default;
 }
 
 body {
@@ -15,7 +16,7 @@ body {
 
 .banner {
     position: relative;
-    background: rgb(66, 91, 158);
+    background: #425b9e;
     height: 420px;
     display: flex;
     flex-direction: column;
@@ -154,7 +155,7 @@ svg {
     position: relative;
 }
 
-.bookCollection::after {
+/* .bookCollection::after {
     content: url("arrow-next-small-svgrepo-com.svg");
     width: 100px;
     height: 350px;
@@ -162,14 +163,13 @@ svg {
     justify-content: center;
     align-items: center;
     background: linear-gradient(-90deg, #E5E5E5, #00000000);
-    /* background: linear-gradient(-90deg, #F00 50%, #00000000); */
     position: absolute;
     bottom: 35px;
     right: 0;
     z-index: 2;
-}
+} */
 
-.bookCollection::before {
+/* .bookCollection::before {
     content: url("arrow-prev-small-svgrepo-com.svg");
     display: flex;
     justify-content: center;
@@ -181,8 +181,84 @@ svg {
     bottom: 35px;
     left: 0;
     z-index: 3;
+} */
+
+.btnn, .btnp {
+    width: 100px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 35px;
+    z-index: 3;
+    border-radius: 0;
 }
 
+.btnn {
+    background: linear-gradient(-90deg, #E5E5E5, #00000000);
+    right: 0;
+}
+
+.btnp {
+    background: linear-gradient(90deg, #E5E5E5, #00000000);
+    left: 0;
+}
+
+/* button:hover {
+    cursor: pointer;
+} */
+
+.infos {
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.scroll {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+}
+
+/* .btnn button {
+    width: 100px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-90deg, #E5E5E5, #00000000);
+    position: absolute;
+    bottom: 53px;
+    right: 0;
+    z-index: 3;
+    border-radius: 0;
+}
+
+.btnp button {
+    width: 100px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #E5E5E5, #00000000);
+    position: absolute;
+    bottom: 53px;
+    left: 0;
+    z-index: 3;
+    border-radius: 0;
+}
+ */
+/* .btnpp img {
+    width: 35px;
+    height: 35px;
+    z-index: 5;
+} */
 .container::-webkit-scrollbar {
     height: 0;
     width: 0;
@@ -206,28 +282,25 @@ svg {
 }
 
 .card img {
-    height: 70%;
+    height: 67%;
     border: 1px solid #222;
 }
 
 .info {
-    width: 100%;
+    font-family: sans-serif;
+    font-weight: 600;
+    width: 95%;
     height: 35px;
     overflow: hidden;
 }
 
 
 button {
-    font-family: inherit;
-    width: 95%;
-    height: 40px;
-    font-size: 20px;
+    font-family: sans-serif;
+    width: 80%;
+    height: 38px;
+    font-size: 1rem;
     background: rgb(66, 91, 158);
-    color: white;
-    padding: 0.7em 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: none;
     border-radius: 7px;
     overflow: hidden;

@@ -1,17 +1,16 @@
 package com.personalStudies.Library_Manager.controllers;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.personalStudies.Library_Manager.DTO.BookDTO;
 import com.personalStudies.Library_Manager.entities.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.personalStudies.Library_Manager.DTO.BookMinDTO;
 import com.personalStudies.Library_Manager.services.BookService;
@@ -22,7 +21,7 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    @GetMapping
+    @GetMapping("/")
     public String findAll(Model model) {
         Map<String, List<BookMinDTO>> listGenres = new HashMap<>();
         List<BookMinDTO> allBooks = bookService.findAllDTO();
@@ -39,5 +38,13 @@ public class BookController {
         model.addAttribute("books", allBooks);
 
         return "index";
+    }
+
+    @GetMapping("/livro/{id}")
+    public String showDetails(@PathVariable Long id, Model model) {
+        BookDTO book = bookService.bookInformation(id);
+        model.addAttribute("book", book);
+
+        return "book";
     }
 }

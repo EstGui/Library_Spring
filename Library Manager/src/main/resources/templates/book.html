@@ -1,27 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book</title>
-    <link rel="stylesheet" href="../static/book.css">
+    <link rel="stylesheet" href="/book.css">
 </head>
 <body>
 <div class="container">
     <div class="card">
         <div class="img">
-            <img src="joey-huang-VzIKITZA-N0-unsplash.jpg">
+            <img th:src="${book.imgUrl}">
         </div>
         <div class="text">
-            <h2>Imagem da Flor</h2>
+            <h2 th:text="${book.title}"></h2>
+            <p th:text="${book.author}"></p>
         </div>
     </div>
 </div>
 
 <div class="ppreta">
-    <div class="txt">
-        <h1>Texto Aleatório</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, eius at ut id nemo, rerum sunt provident harum veritatis quibusdam sint eaque? Repellat unde facilis quibusdam dolor optio explicabo corporis.</p>
+    <div class="title">
+        <h1 th:text="${book.title}"></h1>
+        <h3 th:text="${book.author}"></h3>
+    </div>
+    <div class="line"></div>
+    <hr>
+    <div class="description">
+        <p th:text="${book.info}"></p>
+    </div>
+    <div class="line effect"></div>
+    <hr>
+    <div class="moreinfo">
+        <div class="more">
+            <div id="genre" th:text="${book.genre}"></div>
+            <div id="pages" th:text="${book.numPags} + ' páginas'"></div>
+        </div>
+        <div id="value" th:text="'R$' + ${book.value}"></div>
+    </div>
+    <div class="line"></div>
+    <hr>
+
+    <div class="buttons">
+        <button>
+            <a class="inicio" href="index.html">Início</a>
+        </button>
+        <button>
+            <a class="buy" href="#">COMPRAR</a>
+        </button>
     </div>
 </div>
 

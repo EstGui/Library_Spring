@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
@@ -11,13 +12,13 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: row;
-    background: linear-gradient(170deg, #53ade2 2%, #a253e2 40%);
+    background: linear-gradient(170deg, #d7d2cc, #304352);
 }
 
 /* a253e2 */
 
 .container {
-    width: 50%;
+    width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,20 +26,20 @@ body {
 }
 
 .card {
-    width: 500px;
-    height: 550px;
+    width: 339px;
+    height: 600px;
     overflow: hidden;
     background: #fff;
     border-radius: 12px;
     box-shadow: -12px 12px 30px rgba(0, 0, 0, 0.4);
-    animation: sla 1.8s ease;
+    animation: sla 2s ease;
     /* transform: rotateX(-15deg); */
 }
 
 @keyframes sla {
     0% {
-        transform: translate(-50%, 0) rotate(15deg) rotateX(-30deg);
-        opacity: 0.5;
+        transform: translate(-20%, 0) rotate(6deg) rotateX(-30deg);
+        opacity: 0.1;
     }
     100% {
         transform: translate(0%, 0) rotate(0deg) rotateX(0deg);
@@ -46,23 +47,34 @@ body {
 }
 
 .img > img {
-    width: 700px;
-    height: 470px;
-    transform: translate(-15%, 0);
+    /* width: 335px; */
+    height: 500px;
+    width: 100%;
+    /* height: 470px; */
+    /* transform: translate(-15%, 0); */
+}
+
+.img {
+    border-bottom: 1px solid #0000003b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ppreta {
-    width: 50%;
+    padding: 2.2rem 6rem;
+    width: 65%;
     background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: baseline;
     box-shadow: -12px 0 20px rgba(0, 0, 0, 0.4);
 }
 
-h1{
+h1 {
     padding: 20px 0;
+    font-family: "montserrat";
 }
 
 .txt {
@@ -70,6 +82,115 @@ h1{
     height: 200px;
 }
 
-h2 {
-    margin: 20px 40px;
+.text {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.description {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    padding: 2.2rem 1rem;
+    height: 269px;
+    text-align: justify;
+}
+
+.description {
+    overflow: auto;
+}
+
+.effect::before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(0deg, #FFF, #00000000);
+    z-index: 3;
+    transform: translate(0, -100%);
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+.moreinfo {
+    padding: 2.2rem .5rem;
+}
+
+.buttons {
+    padding: 2.2rem 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 204px;
+    height: 56px;
+    overflow: hidden;
+    background: none;
+    border-radius: 7px;
+    border: none;
+    position: relative;
+}
+
+button > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.buttons .buy {
+    background-color: #425B9E;
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+}
+
+.buttons .inicio {
+    background-color: #7B7B7B;
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.more {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.moreinfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#value {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
 }
